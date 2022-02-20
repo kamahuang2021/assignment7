@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
     private Button clickClicky;
     private Button linkCollector;
     private Button btn;
+    private Button locationBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,19 +46,32 @@ public class MainActivity extends AppCompatActivity {
                 openLinkCollectorActivity();
             }
         });
+
+        locationBtn = (Button) findViewById(R.id.locationService);
+        locationBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                openLocationActivity();
+            }
+        });
     }
 
-    public void openLinkCollectorActivity() {
+    private void openLocationActivity() {
+        Intent intent = new Intent(this, LocationActivity.class);
+        startActivity(intent);
+    }
+
+    private void openLinkCollectorActivity() {
         Intent intent = new Intent(this, LinkCollector.class);
         startActivity(intent);
     }
 
-    public void openClickClickyActivity() {
+    private void openClickClickyActivity() {
         Intent intent = new Intent(this, ClickClickyActivity.class);
         startActivity(intent);
     }
 
-    public void openActivity2() {
+    private void openActivity2() {
         Intent intent = new Intent(this, Activity2.class);
         startActivity(intent);
     }
