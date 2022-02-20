@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private Button clickClicky;
+    private Button linkCollector;
+    private Button btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,13 +21,12 @@ public class MainActivity extends AppCompatActivity {
 
         //wire up the button to do stuff
         //1. to get the button
-        Button btn = findViewById(R.id.btnAboutMe);
+        btn = findViewById(R.id.btnAboutMe);
         //2. set what happens when the user click
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.i("MyApp", "Huixin Huang. huang.huix@northeaster.edu");
-                Toast.makeText(getApplicationContext(), "Huixin Huang. huang.huix@northeastern.edu", Toast.LENGTH_LONG).show();
+                openActivity2();
             }
         });
 
@@ -36,10 +37,28 @@ public class MainActivity extends AppCompatActivity {
                 openClickClickyActivity();
             }
         });
+
+        linkCollector = (Button) findViewById(R.id.linkCollector);
+        linkCollector.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openLinkCollectorActivity();
+            }
+        });
+    }
+
+    public void openLinkCollectorActivity() {
+        Intent intent = new Intent(this, LinkCollector.class);
+        startActivity(intent);
     }
 
     public void openClickClickyActivity() {
         Intent intent = new Intent(this, ClickClickyActivity.class);
+        startActivity(intent);
+    }
+
+    public void openActivity2() {
+        Intent intent = new Intent(this, Activity2.class);
         startActivity(intent);
     }
 }
