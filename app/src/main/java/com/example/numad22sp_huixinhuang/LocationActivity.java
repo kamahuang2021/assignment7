@@ -55,7 +55,6 @@ public class LocationActivity extends AppCompatActivity {
             }
         };
 
-        String packageName = this.getPackageName();
         Activity currActivity = this;
         dialogBuilder = new AlertDialog.Builder(this);
         dialogBuilder.setTitle("No enough permission")
