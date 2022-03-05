@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     private Button linkCollector;
     private Button btn;
     private Button locationBtn;
+    private Button weatherAPI;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,8 +55,19 @@ public class MainActivity extends AppCompatActivity {
                 openLocationActivity();
             }
         });
+        weatherAPI = (Button) findViewById(R.id.weatherAPI);
+        weatherAPI.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                openWeatherActivity();
+            }
+        });
     }
 
+    private void openWeatherActivity() {
+        Intent intent = new Intent(this, WeatherActivity.class);
+        startActivity(intent);
+    }
     private void openLocationActivity() {
         Intent intent = new Intent(this, LocationActivity.class);
         startActivity(intent);
