@@ -100,11 +100,6 @@ public class WeatherDataService {
 
                     foreCastByIDResponse.onResponse(weatherReportModels);
 
-
-
-
-
-
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -115,8 +110,6 @@ public class WeatherDataService {
 
             }
         });
-
-
                 //get the property called "consolidated weather"
 
                 //get each item in the array and assign it to model object
@@ -148,12 +141,8 @@ public class WeatherDataService {
                     public void onResponse(List<WeatherReportModel> weatherReportModel) {
                         //we have the weather report
                         getCityForecastByNameCallback.onResponse(weatherReportModel);
-
-
-
                     }
                 });
-
             }
         });
         //fetch the city forecast with cityID

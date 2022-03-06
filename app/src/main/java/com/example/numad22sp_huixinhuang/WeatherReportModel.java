@@ -38,9 +38,9 @@ public class WeatherReportModel {
 
     @Override
     public String toString() {
-        return weather_state_name + "Date: " + applicable_date + '\'' + "Lo: " + min_temp +
-                "Hi: " + max_temp +
-                "Temp=" + the_temp;
+        return weather_state_name + " Date: " + applicable_date + '\'' + " Low: " + min_temp +
+                " High: " + max_temp +
+                "Avg Temp=" + the_temp;
     }
 
     public int getId() {
